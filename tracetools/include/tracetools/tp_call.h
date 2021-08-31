@@ -302,6 +302,60 @@ TRACEPOINT_EVENT(
   )
 )
 
+TRACEPOINT_EVENT(
+  TRACEPOINT_PROVIDER,
+  message_construct,
+  TP_ARGS(
+    const void *, original_message_arg,
+    const void *, constructed_message_arg
+  ),
+  TP_FIELDS(
+    ctf_integer_hex(const void *, original_message, original_message_arg)
+    ctf_integer_hex(const void *, constructed_message, constructed_message_arg)
+  )
+)
+
+TRACEPOINT_EVENT(
+  TRACEPOINT_PROVIDER,
+  rclcpp_intra_publish,
+  TP_ARGS(
+    const void *, publisher_handle_arg,
+    const void *, message_arg
+  ),
+  TP_FIELDS(
+    ctf_integer_hex(const void *, publisher_handle, publisher_handle_arg)
+    ctf_integer_hex(const void *, message, message_arg)
+  )
+)
+
+TRACEPOINT_EVENT(
+  TRACEPOINT_PROVIDER,
+  dispatch_subscription_callback,
+  TP_ARGS(
+    const void *, message_arg,
+    const void *, callback_arg,
+    const uint64_t, source_timestamp_arg
+  ),
+  TP_FIELDS(
+    ctf_integer_hex(const void *, message, message_arg)
+    ctf_integer_hex(const void *, callback, callback_arg)
+    ctf_integer(const uint64_t, source_stamp, source_timestamp_arg)
+  )
+)
+
+TRACEPOINT_EVENT(
+  TRACEPOINT_PROVIDER,
+  dispatch_intra_process_subscription_callback,
+  TP_ARGS(
+    const void *, message_arg,
+    const void *, callback_arg
+  ),
+  TP_FIELDS(
+    ctf_integer_hex(const void *, message, message_arg)
+    ctf_integer_hex(const void *, callback, callback_arg)
+  )
+)
+
 #endif  // _TRACETOOLS__TP_CALL_H_
 
 #include <lttng/tracepoint-event.h>

@@ -338,6 +338,28 @@ DECLARE_TRACEPOINT(
   const char * start_label,
   const char * goal_label)
 
+DECLARE_TRACEPOINT(
+  message_construct,
+  const void * original_message,
+  const void * constructed_message)
+
+DECLARE_TRACEPOINT(
+  rclcpp_intra_publish,
+  const void * publisher_handle,
+  const void * message)
+
+DECLARE_TRACEPOINT(
+  dispatch_subscription_callback,
+  const void * message,
+  const void * callback,
+  const uint64_t source_timestamp
+  )
+
+DECLARE_TRACEPOINT(
+  dispatch_intra_process_subscription_callback,
+  const void * message,
+  const void * callback)
+
 #ifdef __cplusplus
 }
 #endif
