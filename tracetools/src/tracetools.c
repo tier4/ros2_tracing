@@ -97,12 +97,14 @@ void TRACEPOINT(
 void TRACEPOINT(
   rclcpp_publish,
   const void * publisher_handle,
-  const void * message)
+  const void * message,
+  const uint64_t message_timestamp)
 {
   CONDITIONAL_TP(
     rclcpp_publish,
     publisher_handle,
-    message);
+    message,
+    message_timestamp);
 }
 
 void TRACEPOINT(
@@ -287,38 +289,43 @@ void TRACEPOINT(
 void TRACEPOINT(
   rclcpp_intra_publish,
   const void * publisher_handle,
-  const void * message)
+  const void * message,
+  const uint64_t message_timestamp
+  )
 {
   CONDITIONAL_TP(
     rclcpp_intra_publish,
     publisher_handle,
-    message);
+    message,
+    message_timestamp);
 }
 
 void TRACEPOINT(
   dispatch_subscription_callback,
   const void * message,
   const void * callback,
-  const uint64_t source_stamp
-  )
+  const uint64_t source_stamp,
+  const uint64_t message_timestamp)
 {
   CONDITIONAL_TP(
     dispatch_subscription_callback,
     message,
     callback,
-    source_stamp
-    );
+    source_stamp,
+    message_timestamp);
 }
 
 void TRACEPOINT(
   dispatch_intra_process_subscription_callback,
   const void * message,
-  const void * callback)
+  const void * callback,
+  const uint64_t message_timestamp)
 {
   CONDITIONAL_TP(
     dispatch_intra_process_subscription_callback,
     message,
-    callback);
+    callback,
+    message_timestamp);
 }
 
 #ifndef _WIN32
