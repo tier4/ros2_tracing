@@ -106,7 +106,7 @@ def setup(
         # Discard, do not overwrite
         channel_ust.attr.overwrite = 0
         # 8 sub-buffers of 2 times the usual page size
-        channel_ust.attr.subbuf_size = 2 * 4096
+        channel_ust.attr.subbuf_size = 8 * 4096
         channel_ust.attr.num_subbuf = 8
         # Ignore switch timer interval and use read timer instead
         channel_ust.attr.switch_timer_interval = 0
