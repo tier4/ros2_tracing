@@ -364,6 +364,26 @@ DECLARE_TRACEPOINT(
   const void * callback,
   const uint64_t message_timestamp)
 
+DECLARE_TRACEPOINT(
+  construct_ring_buffer,
+  const void * buffer,
+  const size_t size)
+
+DECLARE_TRACEPOINT(
+  ring_buffer_enqueue,
+  const void * buffer,
+  const void * message,
+  const bool is_full)
+
+DECLARE_TRACEPOINT(
+  ring_buffer_dequeue,
+  const void * buffer,
+  const void * message)
+
+DECLARE_TRACEPOINT(
+  ring_buffer_clear,
+  const void * buffer)
+
 #ifdef __cplusplus
 }
 #endif

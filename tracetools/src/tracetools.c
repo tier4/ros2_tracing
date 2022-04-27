@@ -328,6 +328,50 @@ void TRACEPOINT(
     message_timestamp);
 }
 
+void TRACEPOINT(
+  construct_ring_buffer,
+  const void * buffer,
+  const size_t capacity)
+{
+  CONDITIONAL_TP(
+    construct_ring_buffer,
+    buffer,
+    capacity);
+}
+
+void TRACEPOINT(
+  ring_buffer_enqueue,
+  const void * buffer,
+  const void * message,
+  const bool is_full)
+{
+  CONDITIONAL_TP(
+    ring_buffer_enqueue,
+    buffer,
+    message,
+    is_full);
+}
+
+void TRACEPOINT(
+  ring_buffer_dequeue,
+  const void * buffer,
+  const void * message)
+{
+  CONDITIONAL_TP(
+    ring_buffer_dequeue,
+    buffer,
+    message);
+}
+
+void TRACEPOINT(
+  ring_buffer_clear,
+  const void * buffer)
+{
+  CONDITIONAL_TP(
+    ring_buffer_clear,
+    buffer);
+}
+
 #ifndef _WIN32
 # pragma GCC diagnostic pop
 #else
