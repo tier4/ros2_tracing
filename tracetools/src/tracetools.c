@@ -84,6 +84,17 @@ void TRACEPOINT(
 }
 
 void TRACEPOINT(
+  rclcpp_publisher_init,
+  const void * publisher_handle,
+  const char * caret_rclcpp_version)
+{
+  CONDITIONAL_TP(
+    rclcpp_publisher_init,
+    publisher_handle,
+    caret_rclcpp_version);
+}
+
+void TRACEPOINT(
   rcl_publish,
   const void * publisher_handle,
   const void * message)

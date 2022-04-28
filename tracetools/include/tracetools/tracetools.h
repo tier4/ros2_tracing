@@ -106,6 +106,11 @@ DECLARE_TRACEPOINT(
   const char * topic_name,
   const size_t queue_depth)
 
+DECLARE_TRACEPOINT(
+  rclcpp_publisher_init,
+  const void * publisher_handle,
+  const char * caret_rclcpp_version)
+
 /// `rcl_publish`
 /**
  * Message publication.
