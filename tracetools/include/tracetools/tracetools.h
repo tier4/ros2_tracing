@@ -372,18 +372,20 @@ DECLARE_TRACEPOINT(
 DECLARE_TRACEPOINT(
   construct_ring_buffer,
   const void * buffer,
-  const size_t size)
+  const uint64_t capacity)
 
 DECLARE_TRACEPOINT(
   ring_buffer_enqueue,
   const void * buffer,
   const void * message,
+  const uint64_t size,
   const bool is_full)
 
 DECLARE_TRACEPOINT(
   ring_buffer_dequeue,
   const void * buffer,
-  const void * message)
+  const void * message,
+  const uint64_t size)
 
 DECLARE_TRACEPOINT(
   ring_buffer_clear,

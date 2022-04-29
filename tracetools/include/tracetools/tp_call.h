@@ -382,11 +382,11 @@ TRACEPOINT_EVENT(
   construct_ring_buffer,
   TP_ARGS(
     const void *, buffer_arg,
-    const size_t, size_arg
+    const uint64_t, capacity_arg
   ),
   TP_FIELDS(
     ctf_integer_hex(const void *, buffer, buffer_arg)
-    ctf_integer(const size_t, size, size_arg)
+    ctf_integer(const uint64_t, capacity, capacity_arg)
   )
 )
 
@@ -396,11 +396,13 @@ TRACEPOINT_EVENT(
   TP_ARGS(
     const void *, buffer_arg,
     const void *, message_arg,
+    const uint64_t, size_arg,
     const bool, is_full_arg
   ),
   TP_FIELDS(
     ctf_integer_hex(const void *, buffer, buffer_arg)
     ctf_integer_hex(const void *, message, message_arg)
+    ctf_integer(const uint64_t, size, size_arg)
     ctf_integer(const int, is_full, is_full_arg)
   )
 )
@@ -410,11 +412,13 @@ TRACEPOINT_EVENT(
   ring_buffer_dequeue,
   TP_ARGS(
     const void *, buffer_arg,
-    const void *, message_arg
+    const void *, message_arg,
+    const uint64_t, size_arg
   ),
   TP_FIELDS(
     ctf_integer_hex(const void *, buffer, buffer_arg)
     ctf_integer_hex(const void *, message, message_arg)
+    ctf_integer(const uint64_t, size, size_arg)
   )
 )
 
