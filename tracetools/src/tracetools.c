@@ -353,14 +353,14 @@ void TRACEPOINT(
 void TRACEPOINT(
   ring_buffer_enqueue,
   const void * buffer,
-  const void * message,
+  const uint64_t index,
   const uint64_t size,
   const bool is_full)
 {
   CONDITIONAL_TP(
     ring_buffer_enqueue,
     buffer,
-    message,
+    index,
     size,
     is_full);
 }
@@ -368,13 +368,13 @@ void TRACEPOINT(
 void TRACEPOINT(
   ring_buffer_dequeue,
   const void * buffer,
-  const void * message,
+  const uint64_t index,
   const uint64_t size)
 {
   CONDITIONAL_TP(
     ring_buffer_dequeue,
     buffer,
-    message,
+    index,
     size);
 }
 

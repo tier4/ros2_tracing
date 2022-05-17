@@ -377,14 +377,14 @@ DECLARE_TRACEPOINT(
 DECLARE_TRACEPOINT(
   ring_buffer_enqueue,
   const void * buffer,
-  const void * message,
+  const uint64_t index,
   const uint64_t size,
   const bool is_full)
 
 DECLARE_TRACEPOINT(
   ring_buffer_dequeue,
   const void * buffer,
-  const void * message,
+  const uint64_t index,
   const uint64_t size)
 
 DECLARE_TRACEPOINT(
