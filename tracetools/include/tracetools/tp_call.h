@@ -101,13 +101,11 @@ TRACEPOINT_EVENT(
   rclcpp_publish,
   TP_ARGS(
     const void *, publisher_handle_arg,
-    const void *, message_arg,
-    const uint64_t, message_timestamp_arg
+    const void *, message_arg
   ),
   TP_FIELDS(
     ctf_integer_hex(const void *, publisher_handle, publisher_handle_arg)
     ctf_integer_hex(const void *, message, message_arg)
-    ctf_integer(const uint64_t, message_timestamp, message_timestamp_arg)
   )
 )
 
@@ -430,13 +428,11 @@ TRACEPOINT_EVENT(
   rclcpp_intra_publish,
   TP_ARGS(
     const void *, publisher_handle_arg,
-    const void *, message_arg,
-    const uint64_t, message_timestamp_arg
+    const void *, message_arg
   ),
   TP_FIELDS(
     ctf_integer_hex(const void *, publisher_handle, publisher_handle_arg)
     ctf_integer_hex(const void *, message, message_arg)
-    ctf_integer(const uint64_t, message_timestamp, message_timestamp_arg)
   )
 )
 
