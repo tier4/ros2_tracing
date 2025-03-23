@@ -42,3 +42,12 @@ rcl_lifecycle_transition = 'ros2:rcl_lifecycle_transition'
 rclcpp_executor_get_next_ready = 'ros2:rclcpp_executor_get_next_ready'
 rclcpp_executor_wait_for_work = 'ros2:rclcpp_executor_wait_for_work'
 rclcpp_executor_execute = 'ros2:rclcpp_executor_execute'
+
+# For Agnocast
+agnocast_subscription_init = 'agnocast:agnocast_subscription_init'
+agnocast_publisher_init = 'agnocast:agnocast_publisher_init'
+agnocast_publish = 'agnocast:agnocast_publish'
+agnocast_create_callable = 'agnocast:agnocast_create_callable'
+agnocast_callable_start = 'agnocast:agnocast_callable_start'
+agnocast_callable_end = 'agnocast:agnocast_callable_end'
+agnocast_take = 'agnocast:agnocast_take'
