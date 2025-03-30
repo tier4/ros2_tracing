@@ -98,6 +98,7 @@ DEFAULT_EVENTS_ROS = [
     tracepoints.agnocast_callable_start,
     tracepoints.agnocast_callable_end,
     tracepoints.agnocast_take,
+    tracepoints.agnocast_construct_executor,
 ]
 
 DEFAULT_EVENTS_UST = DEFAULT_EVENTS_ROS

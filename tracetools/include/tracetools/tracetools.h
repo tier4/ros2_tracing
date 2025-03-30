@@ -551,6 +551,11 @@ DECLARE_TRACEPOINT(
   const void * message,
   const int64_t entry_id)
 
+DECLARE_TRACEPOINT(
+  agnocast_construct_executor,
+  const void * executor_addr,
+  const char * executor_type_name)
+
 #ifdef __cplusplus
 }
 #endif

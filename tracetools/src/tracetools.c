@@ -510,6 +510,17 @@ void TRACEPOINT(
     entry_id);
 }
 
+void TRACEPOINT(
+  agnocast_construct_executor,
+  const void * executor_addr,
+  const char * executor_type_name)
+{
+  CONDITIONAL_TP(
+    agnocast_construct_executor,
+    executor_addr,
+    executor_type_name);
+}
+
 #ifndef _WIN32
 # pragma GCC diagnostic pop
 #else
