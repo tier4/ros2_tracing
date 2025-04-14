@@ -90,6 +90,15 @@ DEFAULT_EVENTS_ROS = [
     tracepoints.rclcpp_executor_get_next_ready,
     tracepoints.rclcpp_executor_wait_for_work,
     tracepoints.rclcpp_executor_execute,
+    # For Agnocast
+    tracepoints.agnocast_publisher_init,
+    tracepoints.agnocast_subscription_init,
+    tracepoints.agnocast_publish,
+    tracepoints.agnocast_create_callable,
+    tracepoints.agnocast_callable_start,
+    tracepoints.agnocast_callable_end,
+    tracepoints.agnocast_take,
+    tracepoints.agnocast_construct_executor,
 ]
 
 DEFAULT_EVENTS_UST = DEFAULT_EVENTS_ROS
